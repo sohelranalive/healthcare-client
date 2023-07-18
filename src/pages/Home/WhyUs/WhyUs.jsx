@@ -2,7 +2,7 @@ import whyUSImage from '../../../assets/why-us.jpg'
 
 const WhyUs = () => {
     return (
-        <div className="border border-red-400 flex items-center py-20">
+        <div className="flex items-center py-10">
             <div className="w-1/2 pr-28 border">
                 <h1 className="text-4xl font-semibold text-[#007E85]">You have lots of reason to choose us</h1>
                 <br />

@@ -1,6 +1,6 @@
 const Statistics = () => {
     return (
-        <div className="border border-red-500 py-20">
+        <div className="py-10">
             <h1 className="text-4xl font-semibold text-[#007E85] text-center">Our results in numbers</h1>
             <br /><br />
             <div className="flex items-center justify-between">

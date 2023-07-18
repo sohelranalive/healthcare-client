@@ -33,6 +33,9 @@ const Banner = () => {
                     <div className='absolute top-36 right-0 z-20 bg-white px-2 py-2 rounded-md'>
                         <p className='text-2xl font-bold'><span className='text-[#007E85]'>24/7</span> Service</p>
                     </div>
+                    <div className='absolute bottom-24 -left-16 z-20 bg-white px-2 py-2 rounded-md'>
+                        <p className='text-2xl font-bold'><span className='text-[#6EAB36]'>45+</span> Professionals</p>
+                    </div>
                     <img src={bannerImage} alt="" className='h-full w-full p-10 relative z-10' />
                 </div>
             </div>
