@@ -20,10 +20,10 @@ const Header = () => {
                                 }>Home</NavLink></li>
                                 <li><NavLink to='/service' className={({ isActive }) => isActive ? "active" : ""
                                 }>Service</NavLink></li>
-                                <li><NavLink to='/about' className={({ isActive }) => isActive ? "active" : ""
-                                }>About</NavLink></li>
                                 <li><NavLink to='/contact' className={({ isActive }) => isActive ? "active" : ""
                                 }>Contact Us</NavLink></li>
+                                <li><NavLink to='/about' className={({ isActive }) => isActive ? "active" : ""
+                                }>About</NavLink></li>
                                 <li><NavLink to='/blog' className={({ isActive }) => isActive ? "active" : ""
                                 }>Blog</NavLink></li>
                             </ul>
