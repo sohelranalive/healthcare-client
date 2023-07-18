@@ -1,5 +1,5 @@
 import Container from "../../../components/Container";
-import logo from "../../../../public/healthcare-logo.png"
+import logo from "/healthcare-logo.png"
 
 const Footer = () => {
     return (
