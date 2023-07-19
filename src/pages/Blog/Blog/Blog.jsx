@@ -1,4 +1,12 @@
+import useAuth from "../../../hooks/useAuth";
+
 const Blog = () => {
+
+    const { userInfo } = useAuth()
+    console.log(userInfo);
+
+
+
     return (
         <div>
             {/* Page Banner */}
