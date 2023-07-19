@@ -6,6 +6,8 @@ import ErrorPage from "../pages/Shared/ErrorPage/ErrorPage";
 import About from "../pages/About/About/About";
 import Contact from "../pages/ContactUs/Contact/Contact";
 import Blog from "../pages/Blog/Blog/Blog";
+import SignUp from "../pages/SignUp/SignUp";
+import Login from "../pages/Login/Login";
 
 
 const router = createBrowserRouter([
@@ -33,6 +35,14 @@ const router = createBrowserRouter([
             {
                 path: '/blog',
                 element: <Blog></Blog>
+            },
+            {
+                path: '/signup',
+                element: <SignUp></SignUp>
+            },
+            {
+                path: '/login',
+                element: <Login></Login>
             }
         ]
     }

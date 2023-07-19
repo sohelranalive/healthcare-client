@@ -8,7 +8,7 @@ const Service = () => {
     return (
         <div>
             {/* Page Banner */}
-            <div className="page-banner flex items-center">
+            <div className="service-page-banner flex items-center">
                 <Container>
                     <div className="w-full flex items-center">
                         {/* Text and heading */}

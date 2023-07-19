@@ -30,8 +30,8 @@ const Header = () => {
                         </div>
                         <div>
                             <ul className="flex space-x-8">
-                                <li className="text-[#007E85]">SignUp</li>
-                                <li>Login</li>
+                                <li><NavLink to='/signup' className={({ isActive }) => isActive ? "active" : ""}>SingUp</NavLink></li>
+                                <li><NavLink to='/login' className={({ isActive }) => isActive ? "active" : ""}>Login</NavLink></li>
                             </ul>
                         </div>
                     </div>

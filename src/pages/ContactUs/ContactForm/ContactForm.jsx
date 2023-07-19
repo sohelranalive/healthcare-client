@@ -1,3 +1,5 @@
+import { Link } from "react-router-dom";
+
 const ContactForm = () => {
     return (
         <form>
@@ -37,6 +39,12 @@ const ContactForm = () => {
                         <span className="label-text">Message</span>
                     </label>
                     <textarea type="text" placeholder="Time" className="border outline-none py-2 px-2 rounded-md border-[#007E85]" rows={4} />
+                </div>
+            </div>
+            <div className="form-control mt-6">
+                <div className="flex">
+                    <input type="checkbox" className="checkbox checkbox-accent" />
+                    <span className="ms-4">I accept all the <span className="text-blue-500 underline"><Link>terms and conditions.</Link></span></span>
                 </div>
             </div>
             <div className="form-control mt-6 w-4/12 mx-auto">
