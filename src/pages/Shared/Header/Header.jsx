@@ -1,8 +1,22 @@
 import Container from "../../../components/Container";
+import useAuth from "../../../hooks/useAuth";
 import logo from "/healthcare-logo.png"
 import { NavLink } from "react-router-dom";
 
 const Header = () => {
+
+    const { user, userLogOut } = useAuth()
+
+    const userLogOutHandler = () => {
+        userLogOut()
+            .then(result => {
+                console.log(result.user);
+            })
+            .catch(error => {
+                console.log(error);
+            })
+    }
+
     return (
         <div>
             <Container>
@@ -29,10 +43,19 @@ const Header = () => {
                             </ul>
                         </div>
                         <div>
-                            <ul className="flex space-x-8">
-                                <li><NavLink to='/signup' className={({ isActive }) => isActive ? "active" : ""}>SingUp</NavLink></li>
-                                <li><NavLink to='/login' className={({ isActive }) => isActive ? "active" : ""}>Login</NavLink></li>
-                            </ul>
+                            {user
+                                ? <ul className="flex space-x-8 items-center">
+                                    <li><button onClick={userLogOutHandler} className="primary-button">Logout</button></li>
+                                    <li>
+                                        <div className="h-12 w-12 rounded-full border-2 border-[#007E85]">
+                                            <img src={user.photoURL} alt="user" className="h-full w-full rounded-full" />
+                                        </div>
+                                    </li>
+                                </ul>
+                                : <ul className="flex space-x-8">
+                                    <li><NavLink to='/signup' className={({ isActive }) => isActive ? "active" : ""}>SingUp</NavLink></li>
+                                    <li><NavLink to='/login' className={({ isActive }) => isActive ? "active" : ""}>Login</NavLink></li>
+                                </ul>}
                         </div>
                     </div>
                 </div>
