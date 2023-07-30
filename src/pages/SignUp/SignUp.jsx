@@ -285,6 +285,8 @@ const SignUp = () => {
                             </div>
                         </form>
                         <p className="text-red-500 font-bold">{authError}</p>
+                        <br />
+                        <p>Already have an account? <span className="underline text-sky-500"><Link to='/login'>Please Login</Link></span></p>
                     </div>
                     <div className="divider lg:divider-horizontal">OR</div>
                     <div className="w-6/12 pl-4">

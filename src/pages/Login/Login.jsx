@@ -4,7 +4,7 @@ import useAuth from "../../hooks/useAuth";
 import { useState } from "react";
 import { useForm } from "react-hook-form"
 import { BsFillEyeFill, BsFillEyeSlashFill } from 'react-icons/bs';
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 const Login = () => {
 
@@ -83,6 +83,8 @@ const Login = () => {
                                 />
                             </div>
                         </form>
+                        <br />
+                        <p>New to healthcare? <span className="underline text-sky-500"><Link to='/signup'>Please Register</Link></span></p>
                     </div>
                     <div className="divider lg:divider-vertical">OR</div>
                     <div className="">
