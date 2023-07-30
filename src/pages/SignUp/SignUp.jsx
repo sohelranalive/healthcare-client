@@ -31,6 +31,8 @@ const SignUp = () => {
 
     const navigate = useNavigate()
 
+    const [authError, setAuthError] = useState('')
+
     const [showPassword, setShowPassword] = useState(false)
     const [agreement, setAgreement] = useState(true)
     const [loading, setLoading] = useState(false)
@@ -64,16 +66,18 @@ const SignUp = () => {
                 continueExecution()
             })
 
-        const userInfo = {
-            userName: data.name,
-            birthDate: formattedDate,
-            userEmail: data.email,
-            IdentityNo: data.idNumber,
-            usePhone: data.phone,
-            userPhoto: photoUrl
-        }
-
         function continueExecution() {
+
+            const userInfo = {
+                userName: data.name,
+                birthDate: formattedDate,
+                userEmail: data.email,
+                IdentityNo: data.idNumber,
+                usePhone: data.phone,
+                userPhoto: photoUrl,
+                userRole: 'user'
+            }
+
             userSignUp(data.email, data.password)
                 .then(result => {
                     if (result.user) {
@@ -94,6 +98,7 @@ const SignUp = () => {
                                                 .then(() => {
                                                     setLoading(false)
                                                     reset()
+                                                    setAuthError('')
                                                     notify()
                                                     navigate('/login')
                                                 })
@@ -109,7 +114,12 @@ const SignUp = () => {
                     }
                 })
                 .catch(error => {
-                    console.log(error.message);
+                    console.log(error.code);
+                    setLoading(false)
+                    if (error.code == "auth/email-already-in-use") {
+                        return setAuthError('Email is already in use. Please try with a unique email.')
+                    }
+                    setAuthError('Please try again later')
                 })
         }
     }
@@ -274,6 +284,7 @@ const SignUp = () => {
                                 />
                             </div>
                         </form>
+                        <p className="text-red-500 font-bold">{authError}</p>
                     </div>
                     <div className="divider lg:divider-horizontal">OR</div>
                     <div className="w-6/12 pl-4">
